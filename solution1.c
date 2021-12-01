@@ -9,7 +9,7 @@ int depth_measurement = 0;
 int counter = 0;
 
 int main() {
-FILE * input = fopen("input1","r");
+FILE * input = fopen("input1.txt","r");
 
 if (input == NULL) {
     printf("Error, could not open file!");
@@ -17,20 +17,17 @@ if (input == NULL) {
 }
 
 while (fgets(line,10,input) !=NULL) {
-    //printf("%s",line);
     depth_measurement=atoi(line);
-    //printf("%d\n", depth_measurement);
     if (old_depth_measurement != 0) {
         if (depth_measurement > old_depth_measurement) {
             counter++;
         }
     }
-    
-    
-    
     old_depth_measurement = atoi(line);
 }
+
 printf("%d",counter);
 fclose(input);
+
 return(0);
 }
