@@ -17,7 +17,7 @@ int compare (const void * a, const void * b)
 }
 
 int median(int *values,int length) {
-    qsort (values, length, sizeof(int), compare);
+    qsort (values, length, sizeof(int), compare);   
     return values[length/2];
 }
 
